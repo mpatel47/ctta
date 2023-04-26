@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Member Information</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('.static',filename='css/memberinfo.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('.static',filename='css/admin.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('.static',filename='css/editcourseinfo.css') }}"
+    />
+  </head>
+  <body>
+
+    <div class="maincontainer">
+      <div class="container p-3">
+        <div class="title">Class Information</div>
+
+        <div class="table-container">
+          <table>
+            <thread>
+              <tr>
+                <th>Current Time</th>
+                <th>Current Link</th>
+              </tr>
+            </thread>
+            <tbody>
+              <tr>
+                <td id="current-time"></td>
+                <td id="current-link"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="content">
+          <form id='class-form' action="/" method="PUT">
+            <input type="hidden" id="cl_id" name="cl_id" value="{{ cl_id }}" />
+
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Enter Time</span>
+                <input
+                  name="cl_time"
+                  type="datetime-local"
+                  value="{{cl_time}}"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Enter Link</span>
+                <input
+                  type="text"
+                  name="cl_zoom_link"
+                  value="{{ cl_zoom_link }}"
+                />
+              </div>
+            </div>
+
+            <div class="w-auto">
+              <div class="d-flex justify-content-between p-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="delete-course" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{url_for('.static', filename='js/editcourseinfo.js')}}"></script>
+  </body>
+</html>

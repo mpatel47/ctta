@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('.static',filename='css/memberinfo.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet"  >
+    
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="title">Driver Information</div>
+        <input type="hidden" id="driverid" value="{{ driverid }}">
+        <div class="content">
+          <form action="#">
+            <div class="user-details">
+              
+              <div class="input-box">
+                <span class="details">Firstname</span>
+                <input id = "firstname" type="text" placeholder="" >
+              </div>
+              <div class="input-box">
+                <span class="details">Middlename</span>
+                <input id = "middlename" type="text" placeholder="" >
+              </div>
+              <div class="input-box">
+                <span class="details">Lastname</span>
+                <input id = "lastname" type="text" >
+              </div>
+              <div class="input-box">
+                <span class="details">Suffix</span>
+                <input id = "suffix"  type="text" placeholder="" >
+              </div>
+              <div class="input-box">
+                <span class="details">Address_line_1</span>
+                <input id = "adrs1"  type="text" placeholder="" >
+              </div>
+              <div class="input-box">
+                <span class="details">Address_line_2</span>
+                <input id = "adrs2" type="text" placeholder="" >
+              </div>
+              <div class="input-box">
+                <span class="details">City</span>
+                <input id = "city" type="text" placeholder="" >
+              </div>
+             
+              <div class="input-box">
+                <span class="details">Phone</span>
+                <input id = "phone"  type="text" placeholder="" >
+              </div>
+
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input id = "email"  type="text" placeholder="" >
+              </div>
+
+              <div class="input-box">
+                <span class="details">Postal Code </span>
+                <input id = "postalcode" type="text" placeholder="" >
+              </div>
+             
+             
+              
+
+            </div>
+            
+      
+            <div class = "btn-primary">
+              <input class = "btn btn-primary"id = "editdriverbutton"  value="Submit">
+            </div>
+
+          </form>
+        </div>
+    </div>
+    
+
+    <script src="{{url_for('.static', filename='js/editdriverinfo.js')}}"></script>
+</body>
+</html>

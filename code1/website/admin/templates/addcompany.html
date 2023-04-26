@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Course</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('.static',filename='css/memberinfo.css') }}"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Add Company</div>
+      <div class="content">
+        <form id="add-course-form" method="POST">
+
+          
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Name</span>
+              <input id="name" type="text" placeholder="" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Firstname</span>
+              <input id="firstname" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Middlename</span>
+              <input id="middlename" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Lastname</span>
+              <input id="lastname" type="text" />
+            </div>
+            <div class="input-box">
+              <span class="details">Suffix</span>
+              <input id="suffix" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Address_line_1</span>
+              <input id="adrs1" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Address_line_2</span>
+              <input id="adrs2" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">City</span>
+              <input id="city" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Location</span>
+              <input id="location" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Phone</span>
+              <input id="phone" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Postal Code </span>
+              <input id="postalcode" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Website</span>
+              <input id="website" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">Fax</span>
+              <input id="fax" type="text" placeholder="" />
+            </div>
+            <div class="input-box">
+              <span class="details">FleetSize</span>
+              <input id="fleet" type="text" placeholder="" />
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary">
+              Submit
+            </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{url_for('.static', filename='js/addcourse.js')}}"></script>
+  </body>
+</html>
+

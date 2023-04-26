@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block content %}
+    {% include 'sidebar.html' %}
+    {% endblock %}
+
+    <div class = "maincontainer"> 
+   
+    <div class = "container">
+            <table id = "example" class="table table-dark table-striped table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Company name</th>
+                    <th scope="col">Association</th>
+                    <th scope="col">Membership tier</th>
+                    <th scope="col">Membership status</th>
+                </tr>
+                </thead>
+                <tbody>
+                      {%for row in companyinfo
+                        %}
+                <!-- Construct the rest of courses here -->
+                
+                <tr>
+                 
+                  <td> <a class="" href="/admins/admin/{{row.userid}}">  {{row['name']}} </a>  </td>
+                  
+                    {%if row['association'] == 'California' or row['association'] == 'CA' %}
+                    
+                    <td> CTTA </td>
+                    {%else%}
+                    <td>ERSCA</td>
+                    {%endif%}
+                    
+                  <td>{{row['tier']}} </td>
+                  {%if row['status'] == 'Active' %}
+                    <td style = "color:green"> Active</td>
+                  {%else%}
+                  <td style = "color:red">Expired</td>
+                  {%endif%}
+                  
+                  
+                  
+                </tr>
+                
+                {% endfor %} </tbody>
+            </table>
+     </div>
+ </div>
+        
+    
+    
+
+
+    
+</body>
+</html>

@@ -1,0 +1,7 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+table * {
+    padding: 1rem;
+}

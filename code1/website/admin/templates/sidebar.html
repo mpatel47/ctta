@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+  <!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('.static',filename='css/admin.css') }}">
+    
+    
+    <!----===== Boxicons CSS ===== -->
+
+    
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'  rel='stylesheet'>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet"  >
+    
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet"  >
+     
+    <!----======== JS ======== -->
+
+   
+   
+    
+    <!--<title>Dashboard Sidebar Menu</title>--> 
+</head>
+<body>
+
+ <nav class="sidebar close">
+ 
+   
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{{ url_for('static',filename='img/logo.png') }}" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    
+                </div>
+            </div>
+            <style>
+                .toggle {
+                  position: relative; margin-top: 15px;}
+              </style>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+
+                    <li class="nav-link">
+                        <a href="{{url_for('admin.home')}}">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="{{url_for('admin.courseinfo')}}">
+                            <i class='bx bx-book-alt icon' ></i>
+                            <span class="text nav-text">Courses</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <style>
+                .bottom-content .nav-link {
+                  margin-top: 30px;
+                }
+              </style>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="{{url_for('main.logout')}}" class="nav-link">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                
+                
+            </div>
+        </div>
+
+    </nav>
+  
+    <script  src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script  src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script  src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{url_for('.static', filename='js/admin.js')}}"></script>
+
+</body>
+</html>

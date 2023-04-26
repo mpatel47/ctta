@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+    {% block content %}
+    {% include 'usersidebar.html' %}
+    {% endblock %}
+    <img src="./static/img/logo.png" alt="Image description" style="position: absolute; top: 30px; right: 20px; width: 145px; height: 75px;">
+   
+    <div class="title">Course Payment</div>
+    
+    <style>
+
+             .title {
+            position: absolute;
+            top: 36px;
+            left: 190px;
+            font-size: 28px; 
+            font-weight: bold;;
+        } 
+
+      .registration {
+        position: absolute;
+        top: 110px;
+        left: 35%;
+        transform: translateX(-50%);
+        background-color: #aee2e0; 
+        padding: 20px;
+        border: 5px solid #d9edaf;
+        width: 410px; height:410px;
+      }
+
+      .registration div {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 70px;
+}
+      
+      .payment {
+        position: absolute;
+        top: 110px;
+        left: 65%;
+        transform: translateX(-50%);
+        background-color: #e6f7ff;
+        padding: 20px;
+        border: 5px solid #d9edaf;
+        width: 470px; height: 500px;
+      }
+
+      .payment div {
+  font-size: 24px;
+  margin-top: -18px;
+  margin-left: 150px;
+}
+    
+      .registration label, .registration input {
+        display: inline-flex;
+        align-items: center;
+      }
+      
+      .registration label {
+        width: 150px;
+        justify-content: flex-end;
+        margin-right: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="registration">
+        <div>Registration Review</div>
+
+ <!-- In registration review section, no text input needed, it is just review-->
+
+        <form>
+          <label for="name">Name:</label>
+          <input id="name" name="name" style="width: 167px; margin-top: 10px;">
+
+          <label for="license">Driver's License:</label>
+          <input id="license" name="license" style="width: 167px; margin-top: 10px;">
+
+          <label for="email">Email:</label>
+          <input id="email" name="email" style="width: 167px; margin-top: 10px;">
+
+          <label for="course-name">Course Name:</label>
+          <input id="course-name" name="course-name" style="width: 167px; margin-top: 10px;">
+
+          <label for="course-number">Course Number:</label>
+          <input id="course-number" name="course-number" style="width: 167px; margin-top: 10px;">
+
+          <label for="course-session">Course Session:</label>
+          <input id="course-session" name="course-session" style="width: 167px; margin-top: 10px;">
+
+          <label for="course-period">Course Period:</label>
+          <input id="course-period" name="course-period" style="width: 167px; margin-top: 10px;">
+
+          <label for="instruction-type">Instruction Type:</label>
+          <input id="instruction-type" name="instruction-type" style="width: 167px; margin-top: 10px;">
+
+          <label for="tuition">Tuition:</label>
+          <input id="tuition" name="tuition" style="width: 167px; margin-top: 10px;">
+
+        </form>
+      </div>
+
+      <div style="position: absolute; top: 560px; left: 430px;">
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree" style="font-size: 24px;">Total: $</label>
+      </div>
+
+      <div class="payment">
+        <div>Payment</div>
+
+        <form style="display: flex; flex-direction: column; gap: 5px;">
+
+            <label for="card">Card Type:</label>
+            <select id="card" name="card" style="width: 200px;">
+              <option value="" selected disabled>Please select a card type</option>
+              <option value="visa">Visa</option>
+              <option value="mastercard">Mastercard</option>
+              <option value="amex">American Express</option>
+              <option value="discover">Discover</option>
+            </select>
+
+          <label for="cardnum">Card Number:</label>
+          <input type="text" id="cardnum" name="cardnum" required style="width: 200px;">
+          <span id="cardnum-error" style="color:red;"></span>
+
+          <label for="cardname">Name on Card:</label>
+          <input type="text" id="cardname" name="cardname" style="width: 200px;">
+
+          <label for="expdate" style="display: inline-block;">Expiration Date:</label>
+          <input type="text" id="expdate" name="expdate" pattern="^\d{2}/\d{2}$" placeholder="09/24" style="width: 130px; display: inline-block;" required>
+
+          <label for="cvv" style="display: inline-block; margin-top: -57px; margin-left: 150px">CVV:</label>
+          <input type="text" id="cvv" name="cvv" pattern="^\d{3}$" placeholder="123" size="3" style="width: 50px; margin-left: 150px; display: inline-block;" required>
+
+          <label for="address">Address Line:</label>
+          <input type="text" id="address" name="address" style="width: 200px; display: inline-block;">
+
+          <label for="city" style="display: inline-block; margin-top: -58px; margin-left: 210px">City:</label>
+          <input type="text" id="city" name="city" style="width: 200px; margin-left: 210px; display: inline-block;">
+
+          <label for="zipcode">Zip Code:</label>
+          <input type="text" id="zipcode" name="zipcode" size="5" style="width: 200px; margin-left: 210px; display: inline-block;" pattern="[0-9]+" required>
+
+          <label for="state" style="display: inline-block; margin-top: -57px; margin-left: 210px" >State:</label>
+          <input type="text" id="state" name="state" style="width: 200px;">
+
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" style="width: 200px; margin-left: 210px; display: inline-block;" required>
+
+          <label for="phone" style="display: inline-block; margin-top: -57px; margin-left: 210px" >Phone:</label>
+          <input type="text" id="phone" name="phone" style="width: 200px;" pattern="[0-9]+">
+
+          <button type="submit" style="width: 150px; margin-top: 10px; margin-left: 130px">Save</button>
+
+<!-- The reminder of the check box will be tested out later after enter the correct credit card information and registration reivew has been seen.-->
+       
+      </div>
+        <input type="checkbox" name="total" id="total">
+          <button type="submit" style="width: 200px; margin-top: 650px; margin-left: 700px" onclick="validate()">Submit</button>
+          <p id="reminder" style="display:none; color:red; font-size: 20px; margin-top: 700px; margin-left: 700px">Please check the total payment before submitting.</p>
+        </div>
+        
+      </form>
+    </div>
+
+        <script>
+          const cardNumInput = document.getElementById("cardnum");
+          const cardNumError = document.getElementById("cardnum-error");
+        
+          cardNumInput.addEventListener("input", function() {
+            const isValid = /^\d{16}$/.test(cardNumInput.value);
+            cardNumError.textContent = isValid ? "" : "Please enter a valid card number";
+          });
+      
+      </script>
+  
+<div style="position: absolute; top: 680px; left: 510px;">
+  <div style= "display: inline-block; border-radius: 50%; width: 20px; height: 20px; background-color: rgb(234, 246, 6); color: black; text-align: center; font-weight: bold; font-size: 14px; line-height: 1.5;">!</div>
+  <label style="width: 167px; font-size: 10px; margin-left: 8px;"> Once click "Submit" button, please do NOT refresh, go back, or close the page while payment is processing.</label>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

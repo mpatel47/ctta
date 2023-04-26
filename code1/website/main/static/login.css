@@ -1,0 +1,58 @@
+/* All */
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Left Side */
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%
+}
+
+#login-form {
+    display: flex;
+
+    flex-direction: column;
+    
+
+    height: auto;
+    width: auto;
+}
+
+/* Right Side */
+
+.right {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;        /* centers horizontally */
+    justify-content: center;    /* centers vertically */
+    
+    width: 50%;
+}
+
+#login-title {
+    color: white;
+    font-weight: bold;
+}
+
+.blue-gradient {
+    /* fallback for old browsers */
+    background: #A7BFE8;
+ 
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #6190E8, #A7BFE8);
+ 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #6190E8, #A7BFE8);
+}

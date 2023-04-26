@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Information</title>
+
+</head>
+<body>
+    {% block content %}
+    {% include 'usersidebar.html' %}
+    {% endblock %}
+    <img src="./static/img/logo.png" alt="Image description" style="position: absolute; top: 30px; right: 20px; width: 160px; height: 85px;">
+
+    <style>
+      div.user-info { position: relative; top: 90px; left: 240px; font-size: 30px; font-weight: bold;}
+    </style>
+    
+    <div class="user-info">My Information</div>
+
+<form>
+    <div style="display: flex; flex-wrap: wrap;">
+
+      <div style="margin-right: 20px; margin-left: 280px; margin-top: 160px;">
+        <label for="member name" style="display: block;">Member Name:</label>
+        <input type="text" id="member name" name="member name" required>
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 160px;">
+        <label for="member id" style="display: block;">Member ID:</label>
+        <input type="text" id="member id" name="member id" required>
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 160px;">
+        <label for="member dl" style="display: block;">Member DL:</label>
+        <input type="text" id="member dl" name="member dl">
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 160px;">
+        <label for="member status" style="display: block;">Member Status:</label>
+        <input type="text" id="member status" name="member status" required>
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 160px;">
+        <label for="member tier" style="display: block;">Member Tier:</label>
+        <input type="text" id="member tier" name="member tier">
+     </div>
+    </div>
+  
+    <div style="display: flex; flex-wrap: wrap;">
+
+      <div style="margin-right: 20px; margin-left: 280px; margin-top: 10px;">
+        <label for="email" style="display: block;">Email:</label>
+        <input type="text" id="email" name="email" >
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 10px;">
+        <label for="phone" style="display: block;">Phone:</label>
+        <input type="text" id="phone" name="phone" pattern="[0-9]+">
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 10px;">
+        <label for="fax" style="display: block;">Fax:</label>
+        <input type="text" id="fax" name="fax" pattern="[0-9]+">
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 10px;">
+        <label for="number of locations" style="display: block;">Number of Locations:</label>
+        <input type="text" id="number of locations" name="number of locations" pattern="[0-9]+">
+      </div>
+
+      <div style="margin-right: 20px; margin-top: 10px;">
+        <label for="association" style="display: block;">Association:</label>
+        <input type="text" id="association" name="association" pattern="[0-9]+">
+      </div>
+
+    <div style="display: flex; flex-wrap: wrap;">
+
+        <div style="margin-top: 10px; margin-right: 20px; margin-left: 280px;">
+            <label for="fleet size" style="display: block;">Fleet Size:</label>
+            <input type="text" id="fleet size" name="fleet size" required>
+        </div>
+
+        <div style="margin-top: 10px; margin-right: 20px; margin-left: 0px;">
+            <label for="address" style="display: block;">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+    </div>
+
+      <div style="display: flex; flex-wrap: wrap;">
+
+        <div style="margin-left: 0px; margin-top: 35px;">
+          <input type="submit" value="EDIT" style="background-color: rgba(80, 188, 214, 0.968); color: rgb(250, 250, 250); font-size: 1em; border-radius: 10px; border-color: rgb(247, 245, 245);">
+        </div>
+
+        <div style="position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%);">
+          <input type="submit" value="SAVE" onclick="displaySavedMessage()" style="background-color: rgba(80, 188, 214, 0.968); color: rgb(255, 255, 255); font-size: 1.5em; border-radius: 10px; border-color: rgb(247, 245, 245);">
+          <p id="savedMessage" style="display: none; color: green; font-size: 1.5em; text-align: center; position: absolute; top: -200%; left: 50%; transform: translate(-50%, -50%);">Saved!</p>
+          <p id="warningMessage" style="display: none; color: red; font-size: 1.5em; text-align: center; position: absolute; top: -100%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap;">Please fill out the information.</p>
+        </div>
+
+      </form>
+
+        <script>
+        function displaySavedMessage() {
+          var savedMessage = document.getElementById("savedMessage");
+          var warningMessage = document.getElementById("warningMessage");
+          var isFormValid = Array.from(document.querySelectorAll('input[type="text"]')).every((input) => input.value !== '');
+  
+          savedMessage.style.display = isFormValid ? "block" : "none";
+          warningMessage.style.display = isFormValid ? "none" : "block";
+          }
+        </script>
+        
+</body>
+</html>

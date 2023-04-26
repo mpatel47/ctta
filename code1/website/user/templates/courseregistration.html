@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+
+</head>
+<body>
+    {% block content %}
+    {% include 'usersidebar.html' %}
+    {% endblock %}
+    <img src="./static/img/logo.png" alt="Image description" style="position: absolute; top: 30px; right: 20px; width: 160px; height: 85px;">
+
+    <style>
+      div.course-registration { position: relative; top: 70px; left: 200px; font-size: 30px; font-weight: bold;}
+    </style>
+    
+    <div class="course-registration">Course Registration</div>
+
+ <!-- In registration, no text input needed, it is just confirm and review-->
+
+
+ <form>
+
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="margin-left: 600px; margin-top: 150px;">
+          <label for="course name" style="display: block; font-weight: bold; margin-bottom: 5px;">Course Name:</label>
+          <div style="display: flex;">
+            <input id="course name" name="course name" style="width: 400px;">
+            <input type="checkbox" id="agree" name="agree" style="width: 15px; height: 15px; position: relative; top: 5px; margin-left: 5px;">
+          </div>
+        </div>
+      </div>
+      
+
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="margin-left: 600px;">
+          <label for="username" style="display: block; font-weight: bold;">Username:</label>
+          <input id="username" name="username" style="width: 200px;">
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap;">
+        <div style="margin-top: -48px; margin-left: 820px;">
+          <label for="full name" style="display: block; font-weight: bold;">Full Name:</label>
+          <input id="full name" name="full name" style="width: 200px;">
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap;">
+        <div style="margin-left: 600px;">
+          <label for="driver's lisence" style="display: block; font-weight: bold;">Driver's Lisence:</label>
+          <input id="driver's lisence" name="driver's lisence" style="width: 200px;">
+        </div>
+      </div>
+  
+      <div style="display: flex; flex-wrap: wrap;">
+        <div style="margin-left: 600px;">
+          <label for="address" style="display: block; font-weight: bold;">Address:</label>
+          <input id="address" name="address" style="width: 420px;">
+        </div>
+      </div>
+
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="margin-left: 600px;">
+            <label for="phone number" style="display: block; font-weight: bold;">Phone Number:</label>
+            <input id="phone number" name="phone number"  style="width: 200px;" pattern="[0-9]+">
+          </div>
+        <div style="margin-top: -49px; margin-left: 820px;">
+          <label for="email" style="display: block; font-weight: bold;">Email:</label>
+          <input id="email" name="email" style="width: 200px;">
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap;">
+        <div style="position: absolute; top: 70%; left: 53%; transform: translate(-50%, -50%);">
+          <input type="submit" value="SAVE" onclick="displaySavedMessage()" style="background-color: rgba(80, 188, 214, 0.968); color: rgb(255, 255, 255); font-size: 1.3em; border-radius: 10px; border-color: rgb(247, 245, 245);">
+          <p id="savedMessage" style="display: none; color: green; font-size: 1.0em; text-align: center; position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%);">Saved!</p>
+          <p id="warningMessage" style="display: none; color: red; font-size: 1.0em; text-align: center; position: absolute; top: -50%; left: 60%; transform: translate(-50%, -50%); white-space: nowrap;">Please tick the box above.</p>
+        </div>
+      </div>
+        </form>
+     
+      <script>
+        function displaySavedMessage() {
+          const savedMessage = document.getElementById("savedMessage");
+          const warningMessage = document.getElementById("warningMessage");
+          const checkbox = document.getElementById("agree");
+        
+          const isFormValid = checkbox.checked ? true : (warningMessage.style.display = "block", false);
+        
+          savedMessage.style.display = isFormValid ? "block" : "none";
+        }
+        </script>
+
+        <div style="margin-top: 135px; margin-left: 1300px;">
+          <button style="background-color: #c9eec9; color: rgb(0, 0, 0); padding: 1px 5px; border: none; font-size: 2em; border-radius: 5px;" onclick="window.location.href='coursepayment';">Next</button>
+        </div>
+                
+      
+</body>
+</html>
+          

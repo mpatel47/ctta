@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report</title>
+
+	<style>
+
+		.selected {
+			background-color: #3531314a;
+		}
+		</style>
+		
+		<script>
+	
+		window.onload = function() {
+	
+		var checkbox1 = document.querySelector('.checkbox-1');
+		var row1 = document.querySelector('tbody tr:first-of-type');
+	
+	 
+		checkbox1.addEventListener('change', function() {
+			if (this.checked) {
+				row1.classList.add('selected');
+			} else {
+				row1.classList.remove('selected');
+			}
+		});
+	
+	
+		var checkbox2 = document.querySelector('.checkbox-2');
+		var row2 = document.querySelector('tbody tr:nth-of-type(2)');
+	
+	
+		checkbox2.addEventListener('change', function() {
+			if (this.checked) {
+				row2.classList.add('selected');
+			} else {
+				row2.classList.remove('selected');
+			}
+		});
+	
+		var checkbox3 = document.querySelector('.checkbox-3');
+		var row3 = document.querySelector('tbody tr:nth-of-type(3)');
+	
+	 
+		checkbox3.addEventListener('change', function() {
+			if (this.checked) {
+				row3.classList.add('selected');
+			} else {
+				row3.classList.remove('selected');
+			}
+		});
+	
+	   var selectAll = document.getElementById('select-all');
+	   selectAll.addEventListener('change', function() {
+		if (this.checked) {
+			checkboxes.forEach(function(checkbox) {
+				checkbox.checked = true;
+			});
+			row1.classList.add('selected');
+			row2.classList.add('selected');
+			row3.classList.add('selected');
+		} else {
+			checkboxes.forEach(function(checkbox) {
+				checkbox.checked = false;
+			});
+			row1.classList.remove('selected');
+			row2.classList.remove('selected');
+			row3.classList.remove('selected');
+		   }
+		  });
+	
+		};
+		</script>
+
+</head>
+<body>
+    {% block content %}
+    {% include 'sidebar.html' %}
+    {% endblock %}
+    <img src="./static/img/logo.png" alt="Image description" style="position: absolute; top: 30px; right: 20px; width: 160px; height: 85px;">
+
+    <style>
+      div.report { position: relative; top: 70px; left: 200px; font-size: 30px; font-weight: bold;}
+    </style>
+    
+    <div class="report">Report</div>
+    <div class = "container">
+
+	<style>
+		.table-container {
+			position: relative;
+			top: 20px;
+			left: 200px;
+			padding: 10px;
+            width: 80%;
+            height: 270px;
+	}
+	    .checkbox-1 {
+        position: absolute;
+        top: 460px;
+        left: 290px;
+        }
+
+		.checkbox-2 {
+        position: absolute;
+        top: 520px;
+        left: 290px;
+        }
+
+		.checkbox-3 {
+        position: absolute;
+        top: 580px;
+        left: 290px;
+        }
+
+		table {
+          border-collapse: collapse;
+          border-width: 2%;
+          border-bottom-width: 20%;
+          width: 100%;
+		}
+
+
+		th, td {
+
+			border: 5px solid rgb(150, 200, 127);
+			padding: 8px;
+			text-align: center;
+		}
+		th {
+			background-color: #7cd4ea;
+		}
+	</style>
+	  <input type="checkbox" class="checkbox-1">
+	  <input type="checkbox" class="checkbox-2">
+	  <input type="checkbox" class="checkbox-3">
+	</head>
+</head>
+<body>
+
+	<div style="position: absolute; top: 320px; right: 180px;">
+        <form action="/search" method="get">
+          <input type="text" name="q" placeholder="Search...">
+          <button type="submit" style="background-color: #00ff00; border-radius: 5px;">Search</button>
+        </form>
+      </div>
+      
+
+	  <div class="table-container">
+		<div style="float:left; margin-top: 250px; margin-left: 0px;">
+		  <input type="checkbox" id="select-all" style="width: 20px; height: 20px;"> Select All
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Member Name</th>
+					<th>Member ID</th>
+					<th>Column 3</th>
+					<th>Column 4</th>
+					<th>Column 5</th>
+					<th>Column 6</th>
+					<th>Column 7</th>
+					<th>Column 8</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Row 1, Column 1</td>
+					<td>Row 1, Column 2</td>
+					<td>Row 1, Column 3</td>
+					<td>Row 1, Column 4</td>
+					<td>Row 1, Column 5</td>
+					<td>Row 1, Column 6</td>
+					<td>Row 1, Column 7</td>
+					<td>Row 1, Column 8</td>
+				</tr>
+				<tr>
+
+					<td>Row 2, Column 1</td>
+					<td>Row 2, Column 2</td>
+					<td>Row 2, Column 3</td>
+					<td>Row 2, Column 4</td>
+					<td>Row 2, Column 5</td>
+					<td>Row 2, Column 6</td>
+					<td>Row 2, Column 7</td>
+					<td>Row 2, Column 8</td>
+				</tr>
+				<tr>
+					<td>Row 3, Column 1</td>
+					<td>Row 3, Column 2</td>
+					<td>Row 3, Column 3</td>
+					<td>Row 3, Column 4</td>
+					<td>Row 3, Column 5</td>
+					<td>Row 3, Column 6</td>
+					<td>Row 3, Column 7</td>
+					<td>Row 3, Column 8</td>
+				</tr>
+			</tbody>
+			</table>
+
+	</div>
+	<div style="float:left; margin-top: 350px; margin-left: 400px;">
+		<button id="edit-button" style="background-color: #5eff00;" >Edit</button>
+	</div>
+
+	<div style="float:left; margin-top: 350px; margin-left: 400px;">
+		<button id="download-button" style="background-color: #001aff;" >Download</button>
+	</div>
+		<script>
+			const editButton = document.getElementById('edit-button');
+			
+			editButton.addEventListener('click', () => {
+
+			});
+			</script>
+
+		<script>
+const selectAll = document.getElementById('select-all');
+const checkboxes = document.querySelectorAll('.checkbox-1, .checkbox-2, .checkbox-3');
+	  
+selectAll.addEventListener('change', () => {
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+    });
+});
+
+</script>
+
+
+</body>
+</html>

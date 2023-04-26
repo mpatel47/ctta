@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+  <!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('.static',filename='css/user.css') }}">
+    
+    
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'  rel='stylesheet'>
+    
+    <!----======== JS ======== -->
+   
+    
+    <!--<title>Dashboard Sidebar Menu</title>--> 
+</head>
+<body>
+
+    <nav class="sidebar close">
+ 
+   
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../files/logo.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    
+                </div>
+            </div>
+            <style>
+                .toggle {
+                  position: relative; margin-top: 15px;}
+              </style>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+               
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="{{url_for('user.userhome')}}">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="{{url_for('user.userinfo')}}">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text">My information</span>
+                        </a>
+                    </li>  
+                    
+                    <li class="nav-link">
+                        <a href="{{url_for('user.searchmember')}}">
+                        <i class='bx bx-search icon'></i>
+                        <span class="text nav-text">Company Search</span>
+                        </a>
+                    </li>    
+
+                    <li class="nav-link">
+                        <a href="{{url_for('user.courseregistration')}}">
+                        <i class='bx bx-cart add icon'></i>
+                        <span class="text nav-text">Course Register</span>
+                        </a>
+                    </li>   
+
+
+                </ul>
+            </div>
+
+                        <style>
+                .toggle {
+                  position: relative; margin-top: 15px;}
+              </style>
+              
+            <div class="bottom-content">
+                <li class="">
+                    <a href="{{url_for('main.logout')}}">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                
+                
+            </div>
+        </div>
+
+    </nav>
+  
+    <script src="{{url_for('.static', filename='js/user.js')}}"></script>
+
+</body>
+</html>
